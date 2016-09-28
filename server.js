@@ -5,11 +5,13 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne={
-    title:'Article one | Kumar Ranvijay',
-    heading:'Article one',
-    date:'28 sept 2016',
-    content:`
+
+var articles = {
+    'article-one':{ 
+        title:'Article one | Kumar Ranvijay',
+        heading:'Article one',
+        date:'28 sept 2016',
+        content:`
                 <p>
                     this is the content for first article. this is the content for first article. this is the content for first article. this is the content for first article. this is the content for first article. this is the content for first article. this is the content for first article.
                 </p>
@@ -18,7 +20,23 @@ var articleOne={
                 </p>
                 <p>
                         this is the content for first article. this is the content for first article. this is the content for first article. this is the content for first article. this is the content for first article. this is the content for first article. this is the content for first article.
-                </p>`
+                </p>` },
+    'article-two':{ 
+        title:'Article two | Kumar Ranvijay',
+        heading:'Article two',
+        date:'18 sept 2016',
+        content:`
+                <p>
+                        this is the content for second article. this is the content for second article.
+                </p>` },
+    'article-three':{
+        title:'Article three | Kumar Ranvijay',
+        heading:'Article three',
+        date:'8 sept 2016',
+        content:`
+                <p>
+                        this is the content for third article. this is the content for third article.
+                </p>`},
 };
 
 
@@ -31,7 +49,7 @@ function createTemplate(data){
         <html>
             <head>
                 <title>
-                    {title}
+                    ${title}
                 </title>
             <meta name="veiwport" content="width=device-width, intial-scale=1"/>
             <link href="/ui/style.css" rel="stylesheet" />
@@ -66,16 +84,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
-  res.send(createTemplate(articleOne));
-});
-
-app.get('/article-two', function (req, res) {
-  res.send('article two requested');
-});
-
-app.get('/article-three', function (req, res) {
-  res.send('article three requested');
+app.get('/:articleName', function (req, res) {
+    var articleName=req.params.articleName;
+  res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
