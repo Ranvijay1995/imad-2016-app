@@ -9,11 +9,27 @@ app.use(morgan('combined'));
 
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+  res.sendFile(path.join(__dirname, 'ui', 'replaceindex.html'));
 });
 
 app.get('/profile', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'profile.html'));
+});
+
+app.get('/blog', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
+});
+
+app.get('/personal', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'personal.html'));
+});
+
+app.get('/professional', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'professional.html'));
+});
+
+app.get('/article', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'article.html'));
 });
 
 app.get('/ui/style.css', function (req, res) {
