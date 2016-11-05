@@ -1,23 +1,14 @@
-<!doctype html>
-<html>
-    <head>
-        <link href="/ui/style.css" rel="stylesheet" />
-    </head>
-    <body>
-        <a href="/profile">Profile</a>
-        <div class="center">
-            <img src="/ui/madi.png" class="img-medium"/>
-        </div>
-        <br>
-        <div class="center text-big bold">
-            Hi! I am ranvijay and this is my first webapp
-            <h4>this is a new heading </h4>
-            this is made from local change.
-        </div>
-        <script>
-            alert('hi ,I am javasript');
-        </script>
-        <script type="text/javascript" src="/ui/main.js">
-        </script>
-    </body>
-</html>
+function loadLoginForm () {
+    var loginHtml = `
+        <h3>Login/Register to unlock awesome features</h3>
+        <input type="text" id="username" placeholder="username" />
+        <input type="password" id="password" />
+        <br/><br/>
+        <input type="submit" id="login_btn" value="Login" />
+        <input type="submit" id="register_btn" value="Register" />
+        `;
+    document.getElementById('login_area').innerHTML = loginHtml;
+    
+    
+    
+    
