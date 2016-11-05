@@ -56,7 +56,7 @@ app.post('/create-user', function (req, res) {
         if (err) {
             res.status(500).send(err.toString());
         } else {
-            res.send("user succesfully created:",+username);
+            res.send('user succesfully created:',+username);
         }
     } );
 });
@@ -70,7 +70,20 @@ app.post('/login', function (req, res) {
         if (err) {
             res.status(500).send(err.toString());
         } else {
-            res.send("user succesfully created:",+username);
+            if(result.row.length===0){
+                req.send(403).send('username/password is invalid');
+            }
+            else{
+                var dbString=result.row[0].password;
+                var salt=dbString.split('$')[2];
+                var hashedPassword=hash(password,salt);
+                if(hashedPassword===dbString)
+                {
+                     res.send('user credential are correct');
+                }else{
+                    req.send(403).send('username/password is invalid');
+                }
+            }
         }
     } );
 });
