@@ -2,7 +2,7 @@
   
   
   
-var submit = document.getElementById('login_btn');
+var submit = document.getElementById('submit_btn');
 submit.onclick = function () {
     
     var request = new XMLHttpRequest();
