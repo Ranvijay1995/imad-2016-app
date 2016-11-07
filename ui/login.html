@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<title>BlogLogin</title>
+<style>
+#back {
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+    background-color: CornflowerBlue;
+    color: white;
+    border: solid 1px #666;
+    border-radius: 3px;
+}
+body {
+  background-color: #e6b3ff;
+  margin-left: 5px;
+  margin-top: 0px;
+}
+</style>
+
+</head>
+<body>
+<h1>
+<img src="bloglogo.jpg" alt="logo" width="310" height="120">
+</h1>
+<p><h3 style="color:purple"><u> Existing User LogIn : </u></h3></p>
+<div class="="container">
+<form role="form">
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd">
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox"> Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-default" name ="submit" >Submit</button>
+</form>
+<script>
+document.getElementById("submit").addEventListener("click", function(){
+    alert("You have successfully Logged In!Welcome ");
+});
+</script>
+<div class="container">
+<input type="button" value="Back to Home page" id="back" onClick="location.href='bloghome.html'">
+</div>
+</div>
+</body>
+</html>
