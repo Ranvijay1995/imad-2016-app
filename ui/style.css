@@ -28,3 +28,14 @@ body {
                        padding-left: 20px;
                        padding-right: 20px;
 }
+.article {
+                       font-size:100%;
+                       text-align: center;
+                       max-width: 800px;
+                       margin: 0 auto;
+                       color: #553F3F;
+                       font-family:lucida calligraphy;
+                       padding-top: 60px;
+                       padding-left: 20px;
+                       padding-right: 20px;
+}
