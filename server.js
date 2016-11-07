@@ -22,13 +22,34 @@ app.use(bodyParser.json());
 
 
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
+
+
 
 app.get('/replaceindex', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'replaceindex.html'));
 });
+
+
+app.get('/login', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'login.html'));
+});
+
+
+app.get('/sign_up', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui','sign_up.html'));
+});
+
+
+app.get('/contacts', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'contacts.html'));
+});
+
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
+
 
 
 app.get('/profile', function (req, res) {
