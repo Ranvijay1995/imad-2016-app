@@ -21,8 +21,8 @@ app.get('/replaceindex', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'replaceindex.html'));
 });
 
-app.get('/login', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'login.html'));
+app.get('/login_page', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'login_page.html'));
 });
 
 app.get('/sign_up', function (req, res) {
@@ -175,7 +175,7 @@ function createTemplate (data) {
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                 <li><a href="sign_up"><span class="glyphicon glyphicon-user"></span>  Sign Up </a></li>
-                <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>  Login </a></li>
+                <li><a href="/login_page"><span class="glyphicon glyphicon-log-in"></span>  Login </a></li>
                 </ul>
             </div>
         </nav>
