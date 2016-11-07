@@ -26,18 +26,16 @@
 </style>
 </head>
 <body>
-<h1>
-<img src="Logo.jpg" alt="Logo" width="200" height="85">
-</h1>
-<div class="container">
-<p><h3 style="color:purple"><u>New User SignUp : </u></h3></p>
-<form name="myForm" action="connection.php"
-onsubmit="return validateForm()" method="post">
-<script>
-function myFunction() {
-    var x = document.getElementById("name");
-    x.value = x.value.toUpperCase();
-}
+
+ <div class="container">
+     <p><h3 style="color:purple; text-align: center"><u>New User SignUp : </u></h3></p>
+     <form name="myForm" action="connection.php"
+      onsubmit="return validateForm()" method="post">
+     <script>
+     function myFunction() {
+          var x = document.getElementById("name");
+          x.value = x.value.toUpperCase();
+     }
 </script>
 <div class="form-group">
   <label for="name">Name:</label>
