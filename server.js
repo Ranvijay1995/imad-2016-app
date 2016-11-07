@@ -5,8 +5,6 @@ var Pool=require('pg').Pool;
 var crypto=require('crypto');
 var bodyParser=require('body-parser');
 
-
-
 var config = {
   user: 'ranvijay1995',
   database: 'ranvijay1995',
@@ -19,43 +17,29 @@ var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 
-
-
-
-
-
-
 app.get('/replaceindex', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'replaceindex.html'));
 });
-
 
 app.get('/login', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'login.html'));
 });
 
-
 app.get('/sign_up', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui','sign_up.html'));
 });
-
 
 app.get('/contacts', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'contacts.html'));
 });
 
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-
-
-
 app.get('/profile', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'profile.html'));
 });
-
 
 function hash (input,salt)
 {
@@ -63,12 +47,10 @@ function hash (input,salt)
     return ["pbkdf2","10000",salt,hashed.toString('hex')].join('$');
 }
 
-
 app.get('/hash/:input', function (req, res) {
     var hashedString=hash(req.params.input,'this is some random string');
     res.send(hashedString);
 });
-
 
 app.post('/create-user', function (req, res) {
     
@@ -89,7 +71,6 @@ app.post('/create-user', function (req, res) {
 
 
 app.post('/login', function (req, res) {
-    
     var username=req.body.username;
     var password=req.body.password;
     pool.query('SELECT *FROM "user" WHERE username=$1', [username],  function (err, result){
