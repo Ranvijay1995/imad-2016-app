@@ -184,12 +184,10 @@ function createTemplate (data) {
         </nav>
         </div>
         <h3 style="font-size =100% ;font-family:lucida calligraphy; text-align: center;">${heading}</h3>
-        <div class="container" style="font-size =100% ;font-family:lucida calligraphy; text-align: center;">
+        <div style="font-size =100% ;font-family:lucida calligraphy; text-align: center;">
             <hr>
             <br>
-            <p style="font-size =100% ;font-family:lucida calligraphy">
             ${content}
-            </p>
             <hr>
         </div>
     </body>
