@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<title>Signup</title>
+<style>
+#back {
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+    background-color: CornflowerBlue;
+    color: white;
+    border: solid 1px #666;
+    border-radius: 3px;
+}
+</style>
+</head>
+<body>
+<h1>
+<img src="Logo.jpg" alt="Logo" width="200" height="85">
+</h1>
+<div class="container">
+<p><h3 style="color:purple"><u>New User SignUp : </u></h3></p>
+<form name="myForm" action="connection.php"
+onsubmit="return validateForm()" method="post">
+<script>
+function myFunction() {
+    var x = document.getElementById("name");
+    x.value = x.value.toUpperCase();
+}
+</script>
+<div class="form-group">
+  <label for="name">Name:</label>
+  <input type="text" class="form-control" id="name" autofocus required onChange="myFunction()">
+</div>
+<div class="form-group">
+  <label for="num">Contact Number:</label>
+  <input type="number" class="form-control" id="num">
+</div>
+<div class="form-group">
+  <label for="date">Date of Birth:</label>
+  <input type="date" class="form-control" id="date" name="date">
+</div>
+ 
+<div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email" required>
+  </div>
+<div class="form-group">
+  <label for="pwd">Password:</label>
+  <input type="password" class="form-control" id="pwd" pattern="[A-Za-z]{3}" required>
+</div> 
+<div class="form-group">
+  <label for="pwd">Confirm Password:</label>
+  <input type="password" class="form-control" id="pwd" >
+   <label for="gender">Gender:</label>
+  <input type="radio" name="gender" value="male">Male
+  <input type="radio" name="gender" value="female">Female
+   <button type="submit" class="btn btn-primary" name="submit" >Submit</button>
+</div> 
+<script>
+document.getElementById("submit").addEventListener("click", function(){
+    alert("You have successfully signed up!Welcome ");
+});
+</script>
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["name"].value;
+    if (x == null || x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+</script>
+</form>
+</div>
+
+<div class="container">
+<input type="button" value="Back to Home page" id="back" onClick="location.href='Home.html'">
+
+
+</div>  
+</div>
+</body>
+</html>
