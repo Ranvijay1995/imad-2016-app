@@ -72,6 +72,42 @@ app.post('/create-user', function (req, res) {
 });
 
 
+
+
+
+
+app.post('/ui/blogsignup.html', function (req, res) {
+var name = req.body.name;
+var number = req.body.number;
+var email = req.body.email;
+var dob = req.body.dob;
+var password = req.body.password;
+var gender = req.body.gender;
+var userid = req.body.userid;
+var salt =  crypto.randomBytes(128).toString('hex');
+var dbString= hash(password,salt);
+
+pool.query("INSERT INTO 'signup' (name,userid.number.,email,dob,password,gender) VALUES ($1,$2,$3,$4,$5,$6,$7)",[name,userid,number,email,dob,dbString,gender],function(err,result){
+if(err){
+res.status(500),send(err.toString());
+}else {
+res.send('User created successfully :' +name);
+}
+});
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 app.post('/login', function (req, res) {
     var username=req.body.username;
     var password=req.body.password;
