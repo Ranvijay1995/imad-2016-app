@@ -128,6 +128,12 @@ app.post('/login',function(req,res){
     var password=req.body.password;
     
     pool.query('SELECT * FROM "user" WHERE username=$1',[username],function(err,result){
+        
+        var articleData = result.rows[0];
+        console.log(articleData);
+        console.log(password);
+        
+        
          if(err){
            res.status(500).send(err.toString());
        }else{
