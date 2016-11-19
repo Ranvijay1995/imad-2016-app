@@ -127,7 +127,7 @@ app.post('/login',function(req,res){
     var username=req.body.username;
     var password=req.body.password;
     
-    pool.query('SELECT * FROM "user" WHERE username=$1',[username],function(err,result){
+    pool.query("SELECT * FROM "user" WHERE username='"+req.params.articleName+"'",function(err,result){
         
         var articleData = result.rows[0];
         console.log(articleData);
@@ -147,7 +147,7 @@ app.post('/login',function(req,res){
                if(hashedPassword===dbString){
                    
                       //Set a session
-                     req.session.auth={userId:result.rows[0].id};
+                     //           req.session.auth={userId:result.rows[0].id};
                       //set a cookie with a session id
                       //internally on the server side,it maps the session id to an object
                       //{auth:{userId}}
